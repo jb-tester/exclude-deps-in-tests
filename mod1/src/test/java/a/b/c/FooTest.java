@@ -1,12 +1,12 @@
 package a.b.c;
 
-import org.junit.Assert;
+import ognl.ArrayPropertyAccessor;
+import org.apache.tools.ant.launch.Launcher;
 import org.junit.Test;
-import org.springframework.aop.aspectj.TypePatternClassFilter;
 import org.springframework.aop.framework.ProxyConfig;
 import org.springframework.expression.TypedValue;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 /**
  * *******************************
@@ -35,6 +35,7 @@ public class FooTest {
             
         }
     }
+
     @Test
     public void testMethod2()  {
 
@@ -48,7 +49,43 @@ public class FooTest {
             System.out.println("the following type is not available: ");
             System.out.println(e.getMessage());
             System.out.println("**********************************");
-            
+
+
+        }
+    }
+
+    @Test
+    public void testMethod3() {
+
+        try {
+
+            ArrayPropertyAccessor arrayPropertyAccessor = new ArrayPropertyAccessor();
+            fail("no 'ArrayPropertyAccessor' class should be available in classpath!");
+
+        } catch (final NoClassDefFoundError e) {
+            System.out.println("**********************************");
+            System.out.println("the following type is not available: ");
+            System.out.println(e.getMessage());
+            System.out.println("**********************************");
+
+
+        }
+    }
+
+    @Test
+    public void testMethod4() {
+
+        try {
+
+            Launcher arrayPropertyAccessor = new Launcher();
+            fail("no 'Launcher' class should be available in classpath!");
+
+        } catch (final NoClassDefFoundError e) {
+            System.out.println("**********************************");
+            System.out.println("the following type is not available: ");
+            System.out.println(e.getMessage());
+            System.out.println("**********************************");
+
 
         }
     }

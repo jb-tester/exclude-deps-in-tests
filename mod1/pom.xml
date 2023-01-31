@@ -20,26 +20,25 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <!--<classpathDependencyExcludes>
-                            org.springframework:spring-aop,
-                            org.springframework:spring-expression
-                        </classpathDependencyExcludes>-->
-                        <!--<classpathDependencyExcludes>
-                            &lt;!&ndash;<classpathDependencyExcludes>
-                                org.springframework:spring-expression,
-                                org.springframework:spring-aop
-                            </classpathDependencyExcludes>&ndash;&gt;
-                            <classpathDependencyExclude>
+                        org.springframework:spring-expression
+                    </classpathDependencyExcludes>-->
+                    <classpathDependencyExcludes>
+                        <classpathDependencyExclude>
                             org.springframework:spring-aop
                         </classpathDependencyExclude>
-                            <dependencyExclude>org.springframework:spring-expression</dependencyExclude>
-                        </classpathDependencyExcludes>-->
-                        
-                        
-                    
-                    <classpathDependencyScopeExclude>runtime</classpathDependencyScopeExclude>
+                        <classpathDependencyExclude>
+                            org.springframework:spring-expression
+                        </classpathDependencyExclude>
+                        <dependencyExclude>org.apache.ant:ant-launcher</dependencyExclude>
+                        <dependencyExclude>ognl:ognl</dependencyExclude>
+                    </classpathDependencyExcludes>
+
+
+                    <!--<classpathDependencyScopeExclude>runtime</classpathDependencyScopeExclude>-->
                 </configuration>
 
-            </plugin></plugins>
+            </plugin>
+        </plugins>
     </build>
 
 
